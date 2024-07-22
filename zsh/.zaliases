@@ -26,7 +26,7 @@ alias mv="mv -iv"
 alias rm="rm -vI"
 alias bc="bc -ql"
 alias mkd="mkdir -pv"
-alias ls="ls -a --color=always"
+alias ls="ls -aX --color=always"
 alias grep='grep --color=always' 
 
 # Package management aliases
