@@ -5,7 +5,7 @@ cd ~/Pictures/Screenshots
 
 case $1 in
 	full)
-		grim $(date+'%s')
+		grim
 		;;
 	clip)
 		grim -g "$(slurp)"
