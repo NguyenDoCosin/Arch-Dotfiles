@@ -29,7 +29,8 @@ cmd mkfile ${{
 }}
 
 cmd setwallpaper ${{
-    swaymsg output eDP-1 bg "$f" fill
+    wal -qi "$f"
+    pywalfox update
 }}
 
 # Basic Functions

@@ -13,19 +13,8 @@ smart_gaps on
 
 mouse_warping container
 
-# Colors
-set $col_focused #d79921
-set $col_focused_inactive #d8a657
-set $col_unfocused #3c3836
-set $col_text_dark #282828
-set $col_text_light #ebdbb2
-set $col_urgent #fb4934
-set $col_unfocused_border #252423
-
-client.focused           $col_focused           $col_focused           $col_text_dark   $col_focused           $col_focused
-client.focused_inactive  $col_focused_inactive  $col_focused_inactive  $col_text_dark   $col_focused_inactive  $col_focused_inactive
-client.unfocused         $col_unfocused_border  $col_unfocused         $col_text_light  $col_unfocused         $col_unfocused
-client.urgent            $col_text_dark         $col_urgent            $col_text_dark   $col_urgent            $col_urgent
+# Colors ( Import and set colors from pywal )
+include "~/.cache/wal/colors-sway"
 
 ### Variables
 
@@ -42,9 +31,6 @@ set $term foot
 set $menu wofi --show drun
 
 ### Output configuration
-
-# Default wallpaper
-output * bg ~/Pictures/Wallpapers/gruvbg2.png fill
 
 # Swaylock and swayidle configuration:
 exec swayidle -w \

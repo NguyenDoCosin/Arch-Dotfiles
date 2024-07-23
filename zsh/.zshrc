@@ -14,8 +14,12 @@ compinit
 PROMPT="%B%F{220}%~%f%b"
 PROMPT+="\$vcs_info_msg_0_ "
 
-# Autostartx
+# Persist pywal on terminal 
+(cat ~/.cache/wal/sequences &)
+
+# Auto start sway
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+	wal -R # Make the colorscheme persist on reboot
 	sway
 fi
 

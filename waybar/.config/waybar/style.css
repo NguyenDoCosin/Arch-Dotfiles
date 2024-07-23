@@ -1,11 +1,13 @@
+/* Import pywal colors */
+@import url('../../.cache/wal/colors-waybar.css');
+
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
     font-family: JetBrainsMono Nerd Font;
     font-size: 18px;
 }
 
 window#waybar {
-    background-color: #282828;
+    background-color: @background;
     border-bottom: 0px;
     transition-property: background-color;
     transition-duration: .5s;
@@ -24,14 +26,14 @@ window#waybar.solo {
 }
 */
 
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
+/* window#waybar.termite { */
+/*     background-color: #3F3F3F; */
+/* } */
 
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
+/* window#waybar.chromium { */
+/*     background-color: #000000; */
+/*     border: none; */
+/* } */
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
@@ -48,14 +50,14 @@ button:hover {
 }
 
 /* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #282828;
-}
+/* #pulseaudio:hover { */
+/*     background-color: #282828; */
+/* } */
 
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #fabd2f;
+    color: @foreground;
 }
 
 #workspaces button:hover {
@@ -92,18 +94,16 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
+#workspace
 #mpd {
-    background-color: #282828;
+    background-color: @background;
     padding: 4 12px;
-    color: #fabd2f;
+    color: @foreground;
 }
 
-#window,
-#workspaces {
-    margin: 0 6px;
-    color: #fabd2f;
+#window {
+	color: @color1;
 }
-
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
@@ -123,7 +123,7 @@ button:hover {
 /* } */
 
 #battery.charging, #battery.plugged {
-    color: #b8bb26;
+    color: @color1;
     /* background-color: #26A65B; */
 }
 
@@ -137,7 +137,7 @@ button:hover {
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
     /* background-color: #f53c3c; */
-    color: #fb4934;
+    color: @color2;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -165,7 +165,7 @@ button:hover {
 /* } */
 
 label:focus {
-    background-color: #282828;
+    background-color: @background;
 }
 
 /* #cpu { */
@@ -199,8 +199,8 @@ label:focus {
 /* } */
 
 #pulseaudio.muted {
-    background-color: #282828;
-    color: #fb4934;
+    background-color: @background;
+    color: @foreground;
 }
 
 /* #wireplumber { */
