@@ -1,0 +1,29 @@
+# Formats
+font=JetBrainsMono Nerd Font
+font-size=20px
+
+indicator-radius=64
+indicator-thickness=16
+
+color=282828
+separator-color=d79921
+inside-color=282828
+bs-hl-color=fb4934
+inside-color=282828
+inside-clear-color=d3869b
+inside-ver-color=83a598
+inside-wrong-color=fb4934
+key-hl-color=fabd2f
+ring-color=d79921
+ring-clear-color=b16286
+ring-ver-color=458588
+ring-wrong-color=cc241d
+text-color=fbf1c7
+text-clear-color=fbf1c7
+text-ver-color=fbf1c7
+text-wrong-color=fbf1c7
+line-color=282828
+
+# Behaviors
+ignore-empty-password
+show-keyboard-layout

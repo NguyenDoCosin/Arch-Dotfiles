@@ -29,10 +29,15 @@ alias mkd="mkdir -pv"
 alias ls="ls -aX --color=always"
 alias grep='grep --color=always' 
 
+# Other commands
+alias wget="curl -O"
+
 # Package management aliases
-alias void-i="sudo xbps-install -S"
-alias void-su="sudo xbps-install -Su"
-alias void-r="sudo xbps-remove "
-alias void-cache="sudo xbps-remove -Oo"
-alias void-qe="sudo xbps-query -m"
-alias void-qa="sudo xbps-query -l"
+alias pupdate="paru -Syu"
+alias pinstall="paru -S"
+alias premove="paru -Rs"
+alias psearch="paru -Ss"
+alias pclean="paru -Scc"
+alias pshowa="paru -Qq"
+alias pshowe="paru -Qe"
+alias pbatman="paru -Qtdq"
