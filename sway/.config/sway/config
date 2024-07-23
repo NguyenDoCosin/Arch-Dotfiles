@@ -1,23 +1,19 @@
 ### SWAYWM CONFIGURATIONS
 
-### Font config
-font pango: SourceCodePro 16
+font pango: JetBrainsMono Nerd Font 16
 
-### Border configuration
 default_border pixel 2
 default_floating_border pixel 2
 titlebar_border_thickness 0
 smart_borders on
 
-### Gaps configuration
 gaps inner 0
 gaps outer 0
 smart_gaps on
 
-### Other configuration
 mouse_warping container
 
-# Color binds
+# Colors
 set $col_focused #d79921
 set $col_focused_inactive #d8a657
 set $col_unfocused #3c3836
@@ -26,7 +22,6 @@ set $col_text_light #ebdbb2
 set $col_urgent #fb4934
 set $col_unfocused_border #252423
 
-# class                  border                 background             text             indicator              child_border
 client.focused           $col_focused           $col_focused           $col_text_dark   $col_focused           $col_focused
 client.focused_inactive  $col_focused_inactive  $col_focused_inactive  $col_text_dark   $col_focused_inactive  $col_focused_inactive
 client.unfocused         $col_unfocused_border  $col_unfocused         $col_text_light  $col_unfocused         $col_unfocused
@@ -48,19 +43,14 @@ set $menu wofi --show drun
 
 ### Output configuration
 
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# Default wallpaper
 output * bg ~/Pictures/Wallpapers/gruvbg2.png fill
 
 # Swaylock and swayidle configuration:
-
 exec swayidle -w \
          timeout 300 'swaylock' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock'
-
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
 
@@ -86,17 +76,13 @@ exec swayidle -w \
     # Start your launcher
     bindsym $mod+p exec $menu
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
+    # Floating stuff
     floating_modifier $mod normal
 
     # Reload the configuration file
     bindsym $mod+q reload
 
-    # Exit sway (logs you out of your Wayland session)
+    # Exit sway
     bindsym $mod+Shift+q exec swaynag -t warning -m 'This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
 # Moving around:
@@ -137,14 +123,10 @@ exec swayidle -w \
     bindsym $mod+Shift+3 move container to workspace III
     bindsym $mod+Shift+4 move container to workspace IV
     bindsym $mod+Shift+5 move container to workspace V
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
 
 # Layout stuff:
 
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
+    # $mod+b for horizontal splits or $mod+v for vertical splits
     bindsym $mod+b splith
     bindsym $mod+v splitv
 
@@ -165,17 +147,51 @@ exec swayidle -w \
     # Move focus to the parent container
     bindsym $mod+a focus parent
 
-# Scratchpad:
+# Scratchpad
 
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
-
-    # Move the currently focused window to the scratchpad
     bindsym $mod+Shift+minus move scratchpad
-
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
+
+# Resizing containers
+
+mode "resize" {
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+### Other keybinds
+
+# Screenshot
+bindsym Print exec ~/.local/bin/screenshot full
+bindsym $mod+Print exec ~/.local/bin/screenshot clip
+
+# F1 - F12
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_SINK@ 0.05+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_SINK@ 0.05-
+bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessUp exec brillo -A 5
+bindsym XF86MonBrightnessDown exec brillo -U 5
+
+# Toggle between workspaces
+bindsym $mod+Tab workspace back_and_forth 
+
+# Powermenu
+bindsym $mod+Shift+p exec ~/.local/bin/wofi/wofi-power.sh
+
+# Lock the screen
+bindsym $mod+Escape exec swaylock
 
 # Status Bar:
 
