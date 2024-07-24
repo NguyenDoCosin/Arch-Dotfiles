@@ -179,9 +179,6 @@ bindsym XF86MonBrightnessDown exec brillo -U 5
 # Toggle between workspaces
 bindsym $mod+Tab workspace back_and_forth 
 
-# Powermenu
-bindsym $mod+Shift+p exec ~/.local/bin/wofi/wofi-power.sh
-
 # Lock the screen
 bindsym $mod+Escape exec swaylock
 
