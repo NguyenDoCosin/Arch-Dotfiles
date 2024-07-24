@@ -4,7 +4,7 @@
 - WM: swaywm
 - Bar: waybar
 - Terminal: foot
-- App launcher: wofi
+- App launcher: rofi
 - File manager: lf
 - Shell: zsh
 - Lockscreen: swaylock
