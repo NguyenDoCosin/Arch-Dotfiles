@@ -1,4 +1,7 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Persist pywal on terminal 
+(cat ~/.cache/wal/sequences &)
+
+#Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -16,13 +19,11 @@ plug "romkatv/powerlevel10k"
 autoload -Uz compinit
 compinit
 
-# Persist pywal on terminal 
-(cat ~/.cache/wal/sequences &)
-
 # Auto start sway
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	wal -R # Make the colorscheme persist on reboot
 	sway
+	gammastep
 fi
 
 # Source aliases and icons
