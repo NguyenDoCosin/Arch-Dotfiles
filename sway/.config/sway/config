@@ -28,7 +28,7 @@ set $right l
 # Terminal emulator
 set $term foot
 # Preferred application launcher
-set $menu wofi --show drun
+set $menu rofi -show drun -show-icons
 
 ### Output configuration
 
@@ -97,23 +97,29 @@ exec swayidle -w \
 
 # Workspaces:
 
+# Name variables
+set $workspace1 αlpha
+set $workspace2 βeta
+set $workspace3 δelta
+set $workspace4 εpsilon
+set $workspace5 λambda 
+
     # Switch to workspace
-    bindsym $mod+1 workspace I
-    bindsym $mod+2 workspace II
-    bindsym $mod+3 workspace III
-    bindsym $mod+4 workspace IV
-    bindsym $mod+5 workspace V
+    bindsym $mod+1 workspace $workspace1
+    bindsym $mod+2 workspace $workspace2
+    bindsym $mod+3 workspace $workspace3
+    bindsym $mod+4 workspace $workspace4
+    bindsym $mod+5 workspace $workspace5
     # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace I
-    bindsym $mod+Shift+2 move container to workspace II
-    bindsym $mod+Shift+3 move container to workspace III
-    bindsym $mod+Shift+4 move container to workspace IV
-    bindsym $mod+Shift+5 move container to workspace V
+    bindsym $mod+Shift+1 move container to workspace $workspace1 
+    bindsym $mod+Shift+2 move container to workspace $workspace2
+    bindsym $mod+Shift+3 move container to workspace $workspace3
+    bindsym $mod+Shift+4 move container to workspace $workspace4
+    bindsym $mod+Shift+5 move container to workspace $workspace5
 
 # Layout stuff:
 
-    # $mod+b for horizontal splits or $mod+v for vertical splits
-    bindsym $mod+b splith
+    # $mod+b for horizontal splits or $mod+v for vertical splits bindsym $mod+b splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
@@ -140,7 +146,7 @@ exec swayidle -w \
 
 # Resizing containers
 
-mode "resize" {
+mode "ϱ" {
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
     bindsym $up resize shrink height 10px
@@ -154,7 +160,7 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "ϱ"
 
 ### Other keybinds
 
