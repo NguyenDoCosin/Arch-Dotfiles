@@ -180,7 +180,7 @@ bindsym XF86MonBrightnessDown exec brillo -U 5
 bindsym $mod+Tab workspace back_and_forth 
 
 # Lock the screen
-bindsym $mod+Escape exec swaylock
+bindsym $mod+Ctrl+l exec ~/.config/swaylock/source-config
 
 # Status Bar:
 
