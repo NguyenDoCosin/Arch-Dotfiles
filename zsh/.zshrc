@@ -32,8 +32,6 @@ source ~/.zaliases
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-bindkey -v
-
 # History
 HISTFILE=1000
 HISTFILE=~/.zsh_history

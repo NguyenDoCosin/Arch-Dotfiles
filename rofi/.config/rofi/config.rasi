@@ -2,8 +2,8 @@ configuration {
 /*	modes: "window,drun,run,ssh";*/
 	font: "JetBrainsMono Nerd Font 16";
 	location: 5;
-	yoffset: 16;
-	xoffset: 16;
+	yoffset: -16;
+	xoffset: -16;
 /*	fixed-num-lines: true;*/
 /*	show-icons: false;*/
 /*	terminal: "rofi-sensible-terminal";*/

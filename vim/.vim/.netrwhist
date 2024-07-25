@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/cosin/.config/wal/templates'
+let g:netrw_dirhist_5='/home/cosin/Git/rofi/files/launchers'
 let g:netrw_dirhist_4='/home/cosin/.config/swaylock'
 let g:netrw_dirhist_3='/home/cosin/.local/bin/wofi'
 let g:netrw_dirhist_2='/home/cosin/.config'

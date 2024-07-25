@@ -28,7 +28,7 @@ set $right l
 # Terminal emulator
 set $term foot
 # Preferred application launcher
-set $menu rofi -show drun -show-icons
+set $menu ~/.config/rofi/launcher/launcher.sh
 
 ### Output configuration
 
@@ -67,9 +67,6 @@ exec swayidle -w \
 
     # Reload the configuration file
     bindsym $mod+q reload
-
-    # Exit sway
-    bindsym $mod+Shift+q exec swaynag -t warning -m 'This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
 # Moving around:
 
@@ -181,6 +178,9 @@ bindsym $mod+Tab workspace back_and_forth
 
 # Lock the screen
 bindsym $mod+Ctrl+l exec ~/.config/swaylock/source-config
+
+# Powermenu
+bindsym $mod+Shift+Q exec ~/.config/rofi/powermenu/powermenu.sh
 
 # Status Bar:
 
