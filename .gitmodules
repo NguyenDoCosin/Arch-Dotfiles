@@ -7,3 +7,6 @@
 [submodule "vim/.vim/plugged/vim-surround"]
 	path = vim/.vim/plugged/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule "vim/.vim/plugged/wal.vim"]
+	path = vim/.vim/plugged/wal.vim
+	url = https://github.com/dylanaraps/wal.vim
