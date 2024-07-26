@@ -77,7 +77,7 @@ button:hover {
 }
 
 #clock {
-    color: @foreground;
+    color: @color1;
 }
 
 #battery.charging, #battery.plugged {

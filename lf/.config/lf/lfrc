@@ -1,17 +1,19 @@
 # BASIC CONFIGURATIONS
+set previewer ~/.config/lf/previewer
 set hidden true
 set ignorecase true
 set icons true
 set sixel true
+set drawbox
 set rulerfmt "%d  |%a  |%p  |\033[7;31m %m \033[0m  |\033[7;33m %c \033[0m  |\033[7;35m %s \033[0m  |\033[7;34m %f \033[0m  |%i/%t"
 
 # QUICKLY MOVING TO FOLDERS
 map gc cd ~/.config
-# map gD cd ~/Documents
+map gD cd ~/Documents
 map gd cd ~/Downloads
 map gp cd ~/Pictures
 map gg cd ~/Git
-# map gv cd ~/videos
+map gv cd ~/Videos
 map gs cd ~/.local/bin
 # map gt cd ~/.local/share/Trash/files
 
@@ -33,8 +35,23 @@ cmd setwallpaper ${{
     pywalfox update
 }}
 
+# # Trash bindings
+# cmd trash ${{
+#   files=$(printf "$fx" | tr '\n' ';')
+#   while [ "$files" ]; do
+#     file=${files%%;*}
+
+#     trashy put "$(basename "$file")"
+#     if [ "$files" = "$file" ]; then
+#       files=''
+#     else
+#       files="${files#*;}"
+#     fi
+#   done
+# }}
+
 # Basic Functions
-# map . set hidden!
+map . set hidden!
 # map dd trash
 # map u $trashy restore -r 0
 # map dr $trashy restore
