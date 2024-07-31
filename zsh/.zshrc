@@ -14,6 +14,7 @@ plug "zsh-users/zsh-autosuggestions"
 plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "romkatv/powerlevel10k"
+plug "Aloxaf/fzf-tab"
 
 # Load and initialise completion system
 autoload -Uz compinit
@@ -23,7 +24,6 @@ compinit
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	wal -R # Make the colorscheme persist on reboot
 	sway
-	gammastep
 fi
 
 # Source aliases and icons
@@ -43,3 +43,15 @@ setopt histignorespace
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_find_no_dups
+
+# Shell integrations
+eval "$(fzf --zsh)"
+
+# Completions styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:z*' fzf-preview 'ls --color $realpath'
+
+# Zoxide
+eval "$(zoxide init zsh)"
