@@ -15,6 +15,7 @@ map gp cd ~/Pictures
 map gg cd ~/Git
 map gv cd ~/Videos
 map gs cd ~/.local/bin
+map gC cd ~/Coding
 # map gt cd ~/.local/share/Trash/files
 
 # Custom Functions
