@@ -15,8 +15,11 @@ call plug#end()
 
 """ CONFIGURATIONS
 
-" Do not save backup files.
+" Do not save backup files
 set nobackup
+
+" Do not wrap words
+set nowrap
 
 " Set the terminal
 set splitbelow
@@ -32,7 +35,7 @@ let &t_EI = "\e[0 q"
 """ Key mappings
 
 " NERDtree mappings
-" nnoremap <leader>n :NERDTreeFocus<CR>
-" nnoremap <C-n> :NERDTree<CR>
-" nnoremap <C-t> :NERDTreeToggle<CR>
-" nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>

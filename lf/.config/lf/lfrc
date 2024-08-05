@@ -51,6 +51,10 @@ cmd setwallpaper ${{
 #   done
 # }}
 
+cmd vim $ {{
+	vim "$f"
+}} 
+
 # Basic Functions
 map . set hidden!
 # map dd trash
@@ -66,3 +70,5 @@ map mf mkfile
 map md mkdir
 map bg setwallpaper
 map c clear
+
+map V vim
